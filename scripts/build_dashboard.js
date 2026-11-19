@@ -9,7 +9,7 @@ const LIMITS = { 'Cafes & restaurants': 100, 'Shopping': 300, 'Entertainment': 5
 const FUND = { start: 12000, goal: 20000, deadline: '2031-10' };                       // emergency fund
 
 // ---------- Palette: Swiss lakes ----------
-const C = { turquoise: '#2BB3B1', glacier: '#8FD3E8', deep: '#0E5A6B', alpine: '#5E9C6A', snow: '#F5FAFB', stone: '#6B7A80', sunset: '#E07A5F', sand: '#D9A441', ink: '#163A44' };
+const C = { turquoise: '#2BB3B1', glacier: '#8FD3E8', deep: '#0E5A6B', alpine: '#5E9C6A', snow: '#F5FAFB', stone: '#5F6E74', sunset: '#E07A5F', sand: '#D9A441', ink: '#163A44' };
 
 // ---------- Category rules (keyword in merchant name or description) ----------
 const RULES = [
@@ -172,17 +172,17 @@ const html = `<!doctype html>
   .lim-top { display:flex; justify-content:space-between; align-items:center; gap:6px; }
   .lim-name { font-weight:600; font-size:13px; }
   .badge { font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; white-space:nowrap; }
-  .badge.ok { background:#E6F2E8; color:#3F7A4C; } .badge.near { background:#FBF0D9; color:#8A6514; } .badge.over { background:#FBE6E0; color:#B24A30; }
+  .badge.ok { background:#E6F2E8; color:#356941; } .badge.near { background:#FBF0D9; color:#8A6514; } .badge.over { background:#FBE6E0; color:#A3402A; }
   .lim-num { margin:10px 0 6px; } .lim-num b { font-size:24px; } .lim-num span { color:var(--stone); }
   .bar { height:8px; background:#E7F3F6; border-radius:99px; overflow:hidden; }
   .bar i { display:block; height:100%; border-radius:99px; background:var(--alpine); }
   .near .bar i { background:var(--sand); } .over .bar i { background:var(--sunset); }
-  .lim-left { margin-top:6px; font-size:12px; color:var(--stone); } .over .lim-left { color:#B24A30; font-weight:600; }
+  .lim-left { margin-top:6px; font-size:12px; color:var(--stone); } .over .lim-left { color:#A3402A; font-weight:600; }
   .fund { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
   .fund dl { margin:0; flex:1; min-width:190px; display:grid; grid-template-columns: auto auto; gap:4px 12px; font-size:13px; }
   .fund dt { color:var(--stone); } .fund dd { margin:0; text-align:right; font-weight:600; font-variant-numeric: tabular-nums; }
   .status { margin-top:10px; font-weight:700; font-size:13px; padding:6px 10px; border-radius:8px; display:inline-block; }
-  .status.yes { background:#E6F2E8; color:#3F7A4C; } .status.no { background:#FBE6E0; color:#B24A30; }
+  .status.yes { background:#E6F2E8; color:#356941; } .status.no { background:#FBE6E0; color:#A3402A; }
   .kpis { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-bottom:14px; }
   .kpi span { color:var(--stone); font-size:12px; text-transform:uppercase; letter-spacing:.05em; } .kpi b { display:block; font-size:22px; margin-top:4px; }
   .grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-bottom:14px; }
@@ -200,11 +200,11 @@ const html = `<!doctype html>
   th { color:var(--stone); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; border-top:0; vertical-align:bottom; }
   th small { text-transform:none; letter-spacing:0; font-weight:400; }
   td.num, th.num { text-align:right; white-space:nowrap; }
-  .over-cell { background:#FDF1EC; color:#B24A30; font-weight:700; }
+  .over-cell { background:#FDF1EC; color:#A3402A; font-weight:700; }
   .flag { display:block; font-size:11px; font-weight:600; }
   td .cat { display:inline-flex; align-items:center; gap:6px; }
   .chip { display:inline-block; padding:1px 8px; border-radius:999px; font-weight:600; font-size:12px; }
-  .chip.up { color:#B24A30; background:#FBE6E0; } .chip.down { color:#3F7A4C; background:#E6F2E8; } .chip.flat { color:var(--stone); background:#EEF3F4; }
+  .chip.up { color:#A3402A; background:#FBE6E0; } .chip.down { color:#356941; background:#E6F2E8; } .chip.flat { color:var(--stone); background:#EEF3F4; }
   tr.total td { font-weight:700; border-top:2px solid var(--line); }
   details summary { cursor:pointer; font-weight:600; color:var(--deep); }
   .note { color:var(--stone); font-size:12px; margin-top:16px; text-align:center; }
