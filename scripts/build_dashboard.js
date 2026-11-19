@@ -1,4 +1,4 @@
-// Reads data/statement.csv and builds dashboard.html (v2, spec: specs/prd.md)
+// Reads data/statement.csv and builds index.html (v2, spec: specs/prd.md)
 // Run: node scripts/build_dashboard.js
 const fs = require('fs');
 const path = require('path');
@@ -311,7 +311,7 @@ const html = `<!doctype html>
 </html>
 `;
 
-fs.writeFileSync(path.join(root, 'dashboard.html'), html);
+fs.writeFileSync(path.join(root, 'index.html'), html);
 console.log(`Income ${money(income)} | spending ${money(spent)} | saved ${money(saved)} | left ${money(net)} | other: ${expenses.filter(o => o.cat === OTHER.cat).length}`);
 console.log(`Limits ${monthName(lastM)}: ` + limitCards.map(l => `${l.cat} ${money(l.s)}/${money(l.lim)} ${l.state}`).join('; '));
 console.log(`Over-limit cells: ${overCount} -> ` + history.flatMap(h => h.cells.filter(c => c.s > c.lim).map(c => `${short(h.m)} ${c.cat} ${money(c.s)}`)).join(', '));
