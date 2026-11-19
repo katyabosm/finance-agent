@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Finance Dashboard</title>
+<style>
+  :root { --snow:#F5FAFB; --card:#fff; --ink:#163A44; --stone:#6B7A80; --deep:#0E5A6B; --turq:#2BB3B1; --glacier:#8FD3E8; --alpine:#5E9C6A; --sunset:#E07A5F; --sand:#D9A441; --line:#E1ECEF; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--snow); color:var(--ink); font:14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; }
+  .hero { position:relative; background: linear-gradient(160deg, #0E5A6B 0%, #13798A 55%, #2BB3B1 100%); color:#fff; padding: 22px 16px 64px; overflow:hidden; }
+  .hero svg.mtn { position:absolute; left:0; right:0; bottom:0; width:100%; height:70px; }
+  .hero .in, .wrap { max-width: 1180px; margin: 0 auto; position:relative; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .1em; font-size: 11px; color: #CDEFF2; }
+  h1 { margin: 4px 0 2px; font-size: 26px; }
+  .hero .sub { color:#DDF4F6; }
+  .wrap { padding: 0 16px 40px; margin-top: -40px; }
+  .card { background:var(--card); border-radius:16px; padding:16px 20px; min-width:0; box-shadow: 0 1px 2px rgba(14,90,107,.06), 0 6px 18px rgba(14,90,107,.08); }
+  .card h2 { margin:0 0 12px; font-size:15px; color:var(--deep); }
+  .first { display:grid; grid-template-columns: 1.6fr 1fr; gap:14px; margin-bottom:14px; }
+  .limits { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+  .limit { border:1px solid var(--line); border-radius:12px; padding:12px 14px; }
+  .lim-top { display:flex; justify-content:space-between; align-items:center; gap:6px; }
+  .lim-name { font-weight:600; font-size:13px; }
+  .badge { font-size:11px; font-weight:700; padding:2px 8px; border-radius:999px; white-space:nowrap; }
+  .badge.ok { background:#E6F2E8; color:#3F7A4C; } .badge.near { background:#FBF0D9; color:#8A6514; } .badge.over { background:#FBE6E0; color:#B24A30; }
+  .lim-num { margin:10px 0 6px; } .lim-num b { font-size:24px; } .lim-num span { color:var(--stone); }
+  .bar { height:8px; background:#E7F3F6; border-radius:99px; overflow:hidden; }
+  .bar i { display:block; height:100%; border-radius:99px; background:var(--alpine); }
+  .near .bar i { background:var(--sand); } .over .bar i { background:var(--sunset); }
+  .lim-left { margin-top:6px; font-size:12px; color:var(--stone); } .over .lim-left { color:#B24A30; font-weight:600; }
+  .fund { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .fund dl { margin:0; flex:1; min-width:190px; display:grid; grid-template-columns: auto auto; gap:4px 12px; font-size:13px; }
+  .fund dt { color:var(--stone); } .fund dd { margin:0; text-align:right; font-weight:600; font-variant-numeric: tabular-nums; }
+  .status { margin-top:10px; font-weight:700; font-size:13px; padding:6px 10px; border-radius:8px; display:inline-block; }
+  .status.yes { background:#E6F2E8; color:#3F7A4C; } .status.no { background:#FBE6E0; color:#B24A30; }
+  .kpis { display:grid; grid-template-columns: repeat(4, 1fr); gap:12px; margin-bottom:14px; }
+  .kpi span { color:var(--stone); font-size:12px; text-transform:uppercase; letter-spacing:.05em; } .kpi b { display:block; font-size:22px; margin-top:4px; }
+  .grid { display:grid; grid-template-columns: 1fr 1fr; gap:14px; margin-bottom:14px; }
+  .cats { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+  .legend { flex:1; min-width:220px; margin:0; padding:0; list-style:none; }
+  .legend li { display:grid; grid-template-columns: 12px 1fr auto 40px; gap:8px; align-items:center; padding:5px 0; border-top:1px solid var(--line); }
+  .legend li:first-child { border-top:0; }
+  .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  .legend .v { font-weight:600; font-variant-numeric: tabular-nums; } .legend .p { color:var(--stone); text-align:right; }
+  svg text.bv { font-size:11px; fill:#163A44; font-weight:600; } svg text.bl { font-size:12px; fill:#6B7A80; }
+  .hint { color:var(--stone); font-size:12px; margin-top:4px; }
+  .scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align:left; padding:7px 6px; border-top:1px solid var(--line); }
+  th { color:var(--stone); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; border-top:0; vertical-align:bottom; }
+  th small { text-transform:none; letter-spacing:0; font-weight:400; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  .over-cell { background:#FDF1EC; color:#B24A30; font-weight:700; }
+  .flag { display:block; font-size:11px; font-weight:600; }
+  td .cat { display:inline-flex; align-items:center; gap:6px; }
+  .chip { display:inline-block; padding:1px 8px; border-radius:999px; font-weight:600; font-size:12px; }
+  .chip.up { color:#B24A30; background:#FBE6E0; } .chip.down { color:#3F7A4C; background:#E6F2E8; } .chip.flat { color:var(--stone); background:#EEF3F4; }
+  tr.total td { font-weight:700; border-top:2px solid var(--line); }
+  details summary { cursor:pointer; font-weight:600; color:var(--deep); }
+  .note { color:var(--stone); font-size:12px; margin-top:16px; text-align:center; }
+  @media (max-width: 900px) { .first, .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) { .limits { grid-template-columns: 1fr; } .kpis { grid-template-columns: 1fr 1fr; } h1 { font-size: 22px; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="mtn" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 70 L0 46 L120 22 L210 40 L330 8 L430 36 L520 20 L640 44 L760 14 L860 34 L980 18 L1100 40 L1200 26 L1200 70 Z" fill="#fff" fill-opacity=".12"/>
+    <path d="M0 70 L0 56 L160 38 L280 52 L420 30 L560 54 L700 36 L840 52 L1000 34 L1200 50 L1200 70 Z" fill="#fff" fill-opacity=".18"/>
+  </svg>
+  <div class="in">
+    <div class="eyebrow">Finance agent · v2</div>
+    <h1>My Finance Dashboard</h1>
+    <div class="sub">May – October 2026 · 317 transactions · sample data</div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="first">
+    <section class="card">
+      <h2>Limits — October 2026</h2>
+      <div class="limits">
+      <div class="limit over">
+        <div class="lim-top"><span class="lim-name">Cafes &amp; restaurants</span><span class="badge over">Over limit</span></div>
+        <div class="lim-num"><b>€143</b> <span>/ €100</span></div>
+        <div class="bar"><i style="width:100%"></i></div>
+        <div class="lim-left">Over by €43</div>
+      </div>
+      <div class="limit ok">
+        <div class="lim-top"><span class="lim-name">Shopping</span><span class="badge ok">On track</span></div>
+        <div class="lim-num"><b>€118</b> <span>/ €300</span></div>
+        <div class="bar"><i style="width:39.373333333333335%"></i></div>
+        <div class="lim-left">€182 left</div>
+      </div>
+      <div class="limit ok">
+        <div class="lim-top"><span class="lim-name">Entertainment</span><span class="badge ok">On track</span></div>
+        <div class="lim-num"><b>€21</b> <span>/ €50</span></div>
+        <div class="bar"><i style="width:42.18%"></i></div>
+        <div class="lim-left">€29 left</div>
+      </div></div>
+    </section>
+    <section class="card">
+      <h2>Emergency fund</h2>
+      <div class="fund">
+        <svg width="160" height="160" viewBox="0 0 160 160" role="img" aria-label="Emergency fund 64 percent">
+  <circle cx="80" cy="80" r="62" fill="none" stroke="#8FD3E8" stroke-opacity=".35" stroke-width="14"/>
+  <circle cx="80" cy="80" r="62" fill="none" stroke="#2BB3B1" stroke-width="14" stroke-linecap="round" stroke-dasharray="249.51 389.56" transform="rotate(-90 80 80)"/>
+  <text x="80" y="78" text-anchor="middle" font-size="26" font-weight="700" fill="#163A44">64%</text>
+  <text x="80" y="98" text-anchor="middle" font-size="11" fill="#6B7A80">of €20,000</text></svg>
+        <dl>
+          <dt>Saved now</dt><dd>€12,810</dd>
+          <dt>Goal</dt><dd>€20,000 by October 2031</dd>
+          <dt>Saving per month</dt><dd>€135.00</dd>
+          <dt>Needed per month</dt><dd>€119.83</dd>
+          <dt>Reached at this pace</dt><dd>April 2031</dd>
+        </dl>
+      </div>
+      <div class="status yes">✓ On track for the goal</div>
+    </section>
+  </div>
+
+  <section class="kpis">
+    <div class="card kpi"><span>Income</span><b>€13,218</b></div>
+    <div class="card kpi"><span>Spending</span><b>€11,206</b></div>
+    <div class="card kpi"><span>Saved</span><b>€810</b></div>
+    <div class="card kpi"><span>Left over</span><b style="color:#5E9C6A">+€1,202</b></div>
+  </section>
+
+  <section class="card" style="margin-bottom:14px">
+    <h2>Limits history <small style="color:var(--stone);font-weight:400">· 3 times over limit</small></h2>
+    <div class="scroll"><table>
+        <tr><th>Month</th><th class="num">Cafes &amp; restaurants<br><small>limit €100</small></th><th class="num">Shopping<br><small>limit €300</small></th><th class="num">Entertainment<br><small>limit €50</small></th></tr>
+        <tr><td>May</td><td class="num">€68</td><td class="num">€65</td><td class="num">€24</td></tr><tr><td>June</td><td class="num">€81</td><td class="num">€146</td><td class="num">€22</td></tr><tr><td>July</td><td class="num">€79</td><td class="num">€62</td><td class="num over-cell">€66 <span class="flag">over by €16</span></td></tr><tr><td>August</td><td class="num">€83</td><td class="num over-cell">€394 <span class="flag">over by €94</span></td><td class="num">€20</td></tr><tr><td>September</td><td class="num">€79</td><td class="num">€67</td><td class="num">€20</td></tr><tr><td>October</td><td class="num over-cell">€143 <span class="flag">over by €43</span></td><td class="num">€118</td><td class="num">€21</td></tr>
+      </table></div>
+  </section>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Spending by category</h2>
+      <div class="cats">
+        <svg width="180" height="180" viewBox="0 0 180 180" role="img" aria-label="Spending by category"><circle cx="90" cy="90" r="70" fill="none" stroke="#0E5A6B" stroke-width="24" stroke-dasharray="283.13 156.70" stroke-dashoffset="0.00" transform="rotate(-90 90 90)"><title>Housing &amp; utilities: €7,252</title></circle><circle cx="90" cy="90" r="70" fill="none" stroke="#5E9C6A" stroke-width="24" stroke-dasharray="67.37 372.46" stroke-dashoffset="-284.63" transform="rotate(-90 90 90)"><title>Groceries: €1,755</title></circle><circle cx="90" cy="90" r="70" fill="none" stroke="#2BB3B1" stroke-width="24" stroke-dasharray="31.95 407.87" stroke-dashoffset="-353.49" transform="rotate(-90 90 90)"><title>Shopping: €852</title></circle><circle cx="90" cy="90" r="70" fill="none" stroke="#E07A5F" stroke-width="24" stroke-dasharray="19.42 420.40" stroke-dashoffset="-386.95" transform="rotate(-90 90 90)"><title>Cafes &amp; restaurants: €533</title></circle><circle cx="90" cy="90" r="70" fill="none" stroke="#D9A441" stroke-width="24" stroke-dasharray="14.42 425.40" stroke-dashoffset="-407.87" transform="rotate(-90 90 90)"><title>Transport: €406</title></circle><circle cx="90" cy="90" r="70" fill="none" stroke="#8FD3E8" stroke-width="24" stroke-dasharray="5.24 434.58" stroke-dashoffset="-423.79" transform="rotate(-90 90 90)"><title>Entertainment: €172</title></circle><circle cx="90" cy="90" r="70" fill="none" stroke="#B98BB0" stroke-width="24" stroke-dasharray="4.73 435.09" stroke-dashoffset="-430.54" transform="rotate(-90 90 90)"><title>Health: €159</title></circle><circle cx="90" cy="90" r="70" fill="none" stroke="#7FA7C9" stroke-width="24" stroke-dasharray="1.56 438.27" stroke-dashoffset="-436.77" transform="rotate(-90 90 90)"><title>Subscriptions: €78</title></circle>
+          <text x="90" y="85" text-anchor="middle" font-size="11" fill="#6B7A80">TOTAL</text>
+          <text x="90" y="104" text-anchor="middle" font-size="17" font-weight="700" fill="#163A44">€11,206</text></svg>
+        <ul class="legend"><li><span class="dot" style="background:#0E5A6B"></span><span>Housing &amp; utilities</span><span class="v">€7,252</span><span class="p">65%</span></li><li><span class="dot" style="background:#5E9C6A"></span><span>Groceries</span><span class="v">€1,755</span><span class="p">16%</span></li><li><span class="dot" style="background:#2BB3B1"></span><span>Shopping</span><span class="v">€852</span><span class="p">8%</span></li><li><span class="dot" style="background:#E07A5F"></span><span>Cafes &amp; restaurants</span><span class="v">€533</span><span class="p">5%</span></li><li><span class="dot" style="background:#D9A441"></span><span>Transport</span><span class="v">€406</span><span class="p">4%</span></li><li><span class="dot" style="background:#8FD3E8"></span><span>Entertainment</span><span class="v">€172</span><span class="p">2%</span></li><li><span class="dot" style="background:#B98BB0"></span><span>Health</span><span class="v">€159</span><span class="p">1%</span></li><li><span class="dot" style="background:#7FA7C9"></span><span>Subscriptions</span><span class="v">€78</span><span class="p">1%</span></li></ul>
+      </div>
+      <div class="hint">Savings transfers are not counted as spending.</div>
+    </section>
+
+    <section class="card">
+      <h2>Monthly spending</h2>
+      <div class="scroll"><svg width="464" height="194" viewBox="0 0 464 194" role="img" aria-label="Monthly spending"><rect x="10" y="53.5" width="54" height="116.5" rx="6" fill="#8FD3E8"><title>May: €1,745</title></rect>
+    <text x="37" y="47.5" text-anchor="middle" class="bv">€1,745</text>
+    <text x="37" y="186" text-anchor="middle" class="bl">May</text><rect x="84" y="45.0" width="54" height="125.0" rx="6" fill="#8FD3E8"><title>June: €1,872</title></rect>
+    <text x="111" y="39.0" text-anchor="middle" class="bv">€1,872</text>
+    <text x="111" y="186" text-anchor="middle" class="bl">Jun</text><rect x="158" y="46.7" width="54" height="123.3" rx="6" fill="#8FD3E8"><title>July: €1,848</title></rect>
+    <text x="185" y="40.7" text-anchor="middle" class="bv">€1,848</text>
+    <text x="185" y="186" text-anchor="middle" class="bl">Jul</text><rect x="232" y="30.0" width="54" height="140.0" rx="6" fill="#8FD3E8"><title>August: €2,097</title></rect>
+    <text x="259" y="24.0" text-anchor="middle" class="bv">€2,097</text>
+    <text x="259" y="186" text-anchor="middle" class="bl">Aug</text><rect x="306" y="52.7" width="54" height="117.3" rx="6" fill="#8FD3E8"><title>September: €1,758</title></rect>
+    <text x="333" y="46.7" text-anchor="middle" class="bv">€1,758</text>
+    <text x="333" y="186" text-anchor="middle" class="bl">Sep</text><rect x="380" y="44.1" width="54" height="125.9" rx="6" fill="#2BB3B1"><title>October: €1,885</title></rect>
+    <text x="407" y="38.1" text-anchor="middle" class="bv">€1,885</text>
+    <text x="407" y="186" text-anchor="middle" class="bl">Oct</text><line x1="4" x2="460" y1="45.3" y2="45.3" stroke="#0E5A6B" stroke-dasharray="4 4"/></svg></div>
+      <div class="hint">Dashed line — monthly average (€1,868). Turquoise — latest month.</div>
+    </section>
+
+    <section class="card">
+      <h2>Top 10 expenses</h2>
+      <div class="scroll"><table>
+        <tr><th>Date</th><th>Merchant</th><th>Category</th><th class="num">Amount</th></tr>
+        <tr><td>May 1, 2026</td><td>Apartment Rent</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€1,100.00</td></tr><tr><td>Jun 1, 2026</td><td>Apartment Rent</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€1,100.00</td></tr><tr><td>Jul 1, 2026</td><td>Apartment Rent</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€1,100.00</td></tr><tr><td>Aug 1, 2026</td><td>Apartment Rent</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€1,100.00</td></tr><tr><td>Sep 1, 2026</td><td>Apartment Rent</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€1,100.00</td></tr><tr><td>Oct 1, 2026</td><td>Apartment Rent</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€1,100.00</td></tr><tr><td>Aug 22, 2026</td><td>Style Clothing</td><td><span class="cat"><span class="dot" style="background:#2BB3B1"></span>Shopping</span></td><td class="num">€260.00</td></tr><tr><td>Oct 10, 2026</td><td>City Utilities</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€79.31</td></tr><tr><td>Jul 10, 2026</td><td>City Utilities</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€78.63</td></tr><tr><td>May 10, 2026</td><td>City Utilities</td><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€71.87</td></tr>
+      </table></div>
+    </section>
+
+    <section class="card">
+      <h2>September vs October</h2>
+      <div class="scroll"><table>
+        <tr><th>Category</th><th class="num">Sep</th><th class="num">Oct</th><th class="num">Change</th></tr>
+        <tr><td><span class="cat"><span class="dot" style="background:#E07A5F"></span>Cafes &amp; restaurants</span></td><td class="num">€79</td><td class="num">€143</td><td class="num"><span class="chip up">▲ +€64</span></td></tr><tr><td><span class="cat"><span class="dot" style="background:#2BB3B1"></span>Shopping</span></td><td class="num">€67</td><td class="num">€118</td><td class="num"><span class="chip up">▲ +€51</span></td></tr><tr><td><span class="cat"><span class="dot" style="background:#5E9C6A"></span>Groceries</span></td><td class="num">€298</td><td class="num">€269</td><td class="num"><span class="chip down">▼ −€29</span></td></tr><tr><td><span class="cat"><span class="dot" style="background:#B98BB0"></span>Health</span></td><td class="num">€16</td><td class="num">€36</td><td class="num"><span class="chip up">▲ +€19</span></td></tr><tr><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td class="num">€1,201</td><td class="num">€1,216</td><td class="num"><span class="chip up">▲ +€16</span></td></tr><tr><td><span class="cat"><span class="dot" style="background:#D9A441"></span>Transport</span></td><td class="num">€64</td><td class="num">€69</td><td class="num"><span class="chip up">▲ +€5</span></td></tr><tr><td><span class="cat"><span class="dot" style="background:#8FD3E8"></span>Entertainment</span></td><td class="num">€20</td><td class="num">€21</td><td class="num"><span class="chip up">▲ +€2</span></td></tr><tr><td><span class="cat"><span class="dot" style="background:#7FA7C9"></span>Subscriptions</span></td><td class="num">€13</td><td class="num">€13</td><td class="num"><span class="chip flat">no change</span></td></tr>
+        <tr class="total"><td>Total</td><td class="num">€1,758</td><td class="num">€1,885</td><td class="num"><span class="chip up">▲ +€128</span></td></tr>
+      </table></div>
+    </section>
+  </div>
+
+  <details class="card">
+    <summary>Category rules</summary>
+    <p class="hint" style="margin:8px 0">A transaction goes to the first category whose keyword appears in the merchant name or description. All incoming payments are “Income”. Monthly limits: Cafes &amp; restaurants €100, Shopping €300, Entertainment €50.</p>
+    <table>
+      <tr><th>Category</th><th>Keywords</th></tr>
+      <tr><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Savings</span></td><td>savings transfer</td></tr><tr><td><span class="cat"><span class="dot" style="background:#7FA7C9"></span>Subscriptions</span></td><td>subscription</td></tr><tr><td><span class="cat"><span class="dot" style="background:#0E5A6B"></span>Housing &amp; utilities</span></td><td>rent, utilities, internet, mobile plan</td></tr><tr><td><span class="cat"><span class="dot" style="background:#5E9C6A"></span>Groceries</span></td><td>grocery, groceries, supermarket, street market, bakery</td></tr><tr><td><span class="cat"><span class="dot" style="background:#E07A5F"></span>Cafes &amp; restaurants</span></td><td>coffee, cafe, bistro, food delivery</td></tr><tr><td><span class="cat"><span class="dot" style="background:#D9A441"></span>Transport</span></td><td>taxi, transit, fuel</td></tr><tr><td><span class="cat"><span class="dot" style="background:#B98BB0"></span>Health</span></td><td>pharmacy, clinic, doctor</td></tr><tr><td><span class="cat"><span class="dot" style="background:#2BB3B1"></span>Shopping</span></td><td>marketplace, clothing, clothes, electronics</td></tr><tr><td><span class="cat"><span class="dot" style="background:#8FD3E8"></span>Entertainment</span></td><td>cinema, concert, tickets</td></tr>
+      <tr><td>Other</td><td>anything else</td></tr>
+    </table>
+  </details>
+
+  <p class="note">AI Sandbox Lab learning project. All data is fictional — no real people, cards or accounts.</p>
+</div>
+</body>
+</html>

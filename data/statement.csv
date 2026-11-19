@@ -1,0 +1,318 @@
+date,amount,merchant,description
+2026-05-01,-1100.00,Apartment Rent,Monthly rent
+2026-05-01,-8.42,Daisy Supermarket,Groceries
+2026-05-02,-49.00,Transit Card,Transit pass top-up
+2026-05-02,-16.48,Daisy Supermarket,Groceries
+2026-05-03,-9.99,MovieHome,Streaming subscription
+2026-05-03,-14.96,Daisy Supermarket,Groceries
+2026-05-04,-8.73,Green Yard Grocery,Groceries
+2026-05-04,-3.58,Golden Ear Bakery,Bread and pastries
+2026-05-05,2200.00,Example Ltd,Salary
+2026-05-05,-16.42,Daisy Supermarket,Groceries
+2026-05-05,-3.43,Golden Ear Bakery,Bread and pastries
+2026-05-05,-7.03,Checkers Taxi,Taxi ride
+2026-05-06,-135.00,Savings Account,Savings transfer
+2026-05-06,-12.22,Plate Cafe,Coffee
+2026-05-07,-9.43,Garden Street Market,Groceries
+2026-05-07,-4.70,Plate Cafe,Lunch
+2026-05-08,-2.99,Cloudy Storage,Cloud subscription
+2026-05-09,-15.81,Green Yard Grocery,Groceries
+2026-05-09,-13.39,Daisy Supermarket,Groceries
+2026-05-09,-5.50,Luna Bistro,Lunch
+2026-05-09,-21.33,Everything Marketplace,Order
+2026-05-10,-71.87,City Utilities,"Electricity, water, heating"
+2026-05-12,-24.90,NetPlus,Home internet
+2026-05-12,-15.52,Wellness+ Pharmacy,Medicine
+2026-05-14,-16.86,Daisy Supermarket,Groceries
+2026-05-14,-28.07,Everything Marketplace,Order
+2026-05-15,-12.00,Wave Mobile,Mobile plan
+2026-05-15,-20.08,Green Yard Grocery,Groceries
+2026-05-15,-8.41,Bean Coffee,Lunch
+2026-05-15,-9.52,Checkers Taxi,Taxi ride
+2026-05-15,-12.32,Wellness+ Pharmacy,Medicine
+2026-05-16,-10.19,Daisy Supermarket,Groceries
+2026-05-17,-14.68,Garden Street Market,Groceries
+2026-05-17,-3.88,Golden Ear Bakery,Bread and pastries
+2026-05-18,-12.83,Daisy Supermarket,Groceries
+2026-05-18,-11.62,Daisy Supermarket,Groceries
+2026-05-19,-21.34,Green Yard Grocery,Groceries
+2026-05-19,-5.36,Luna Bistro,Lunch
+2026-05-20,-4.78,Golden Ear Bakery,Bread and pastries
+2026-05-20,-5.18,Bean Coffee,Lunch
+2026-05-22,-6.02,Bean Coffee,Lunch
+2026-05-22,-12.83,Star Cinema,Movie tickets
+2026-05-23,-11.91,Green Yard Grocery,Groceries
+2026-05-23,-6.71,Plate Cafe,Dinner
+2026-05-24,-2.25,Golden Ear Bakery,Bread and pastries
+2026-05-25,-15.80,Green Yard Grocery,Groceries
+2026-05-26,-13.08,Daisy Supermarket,Groceries
+2026-05-27,-15.55,Everything Marketplace,Order
+2026-05-28,-3.27,Golden Ear Bakery,Bread and pastries
+2026-05-30,-13.89,Bean Coffee,Dinner
+2026-05-30,-11.35,Star Cinema,Movie tickets
+2026-06-01,-1100.00,Apartment Rent,Monthly rent
+2026-06-01,-2.12,Golden Ear Bakery,Bread and pastries
+2026-06-02,-49.00,Transit Card,Transit pass top-up
+2026-06-03,-9.99,MovieHome,Streaming subscription
+2026-06-03,-11.15,Garden Street Market,Groceries
+2026-06-03,-9.31,Garden Street Market,Groceries
+2026-06-03,-10.22,Bean Coffee,Coffee
+2026-06-03,-37.27,Everything Marketplace,Order
+2026-06-04,-21.63,Garden Street Market,Groceries
+2026-06-04,-31.01,Everything Marketplace,Order
+2026-06-05,2200.00,Example Ltd,Salary
+2026-06-05,-21.85,Daisy Supermarket,Groceries
+2026-06-06,-135.00,Savings Account,Savings transfer
+2026-06-06,-13.83,Daisy Supermarket,Groceries
+2026-06-06,-8.29,Plate Cafe,Lunch
+2026-06-06,-13.09,Luna Bistro,Lunch
+2026-06-08,-2.99,Cloudy Storage,Cloud subscription
+2026-06-08,-8.77,Daisy Supermarket,Groceries
+2026-06-10,-69.76,City Utilities,"Electricity, water, heating"
+2026-06-10,-15.28,Garden Street Market,Groceries
+2026-06-10,-13.42,Daisy Supermarket,Groceries
+2026-06-12,-24.90,NetPlus,Home internet
+2026-06-12,-9.29,Bean Coffee,Dinner
+2026-06-13,-21.44,Daisy Supermarket,Groceries
+2026-06-13,-11.54,Checkers Taxi,Taxi ride
+2026-06-13,-17.57,Wellness+ Pharmacy,Medicine
+2026-06-14,-60.87,Style Clothing,Clothes
+2026-06-15,-12.00,Wave Mobile,Mobile plan
+2026-06-15,-15.13,Green Yard Grocery,Groceries
+2026-06-15,-16.45,Everything Marketplace,Order
+2026-06-18,-15.51,Green Yard Grocery,Groceries
+2026-06-18,-9.01,Bean Coffee,Coffee
+2026-06-20,-9.70,Checkers Taxi,Taxi ride
+2026-06-20,-11.74,Star Cinema,Movie tickets
+2026-06-21,-9.55,Daisy Supermarket,Groceries
+2026-06-21,-4.05,Luna Bistro,Lunch
+2026-06-21,-9.96,Star Cinema,Movie tickets
+2026-06-22,-15.82,Daisy Supermarket,Groceries
+2026-06-22,-8.11,Daisy Supermarket,Groceries
+2026-06-22,-17.89,Daisy Supermarket,Groceries
+2026-06-22,-4.98,Golden Ear Bakery,Bread and pastries
+2026-06-23,-4.55,Golden Ear Bakery,Bread and pastries
+2026-06-23,-13.66,Wellness+ Pharmacy,Medicine
+2026-06-24,-4.54,Golden Ear Bakery,Bread and pastries
+2026-06-24,-3.27,Golden Ear Bakery,Bread and pastries
+2026-06-25,-3.93,Golden Ear Bakery,Bread and pastries
+2026-06-26,-4.85,Plate Cafe,Coffee
+2026-06-27,-21.27,Garden Street Market,Groceries
+2026-06-27,-18.13,Daisy Supermarket,Groceries
+2026-06-28,-12.96,Luna Bistro,Dinner
+2026-06-30,-21.81,Daisy Supermarket,Groceries
+2026-06-30,-8.99,Luna Bistro,Dinner
+2026-07-01,-1100.00,Apartment Rent,Monthly rent
+2026-07-01,-15.34,Green Yard Grocery,Groceries
+2026-07-02,-49.00,Transit Card,Transit pass top-up
+2026-07-02,-15.53,Garden Street Market,Groceries
+2026-07-02,-16.76,Daisy Supermarket,Groceries
+2026-07-02,-25.70,Everything Marketplace,Order
+2026-07-03,-9.99,MovieHome,Streaming subscription
+2026-07-03,-3.06,Golden Ear Bakery,Bread and pastries
+2026-07-03,-9.23,Checkers Taxi,Taxi ride
+2026-07-04,-2.95,Golden Ear Bakery,Bread and pastries
+2026-07-05,2200.00,Example Ltd,Salary
+2026-07-06,-135.00,Savings Account,Savings transfer
+2026-07-06,-20.99,Garden Street Market,Groceries
+2026-07-06,-18.57,Daisy Supermarket,Groceries
+2026-07-08,-2.99,Cloudy Storage,Cloud subscription
+2026-07-08,-15.79,Daisy Supermarket,Groceries
+2026-07-10,-78.63,City Utilities,"Electricity, water, heating"
+2026-07-10,-3.20,Golden Ear Bakery,Bread and pastries
+2026-07-10,-6.46,Bean Coffee,Dinner
+2026-07-10,-19.33,Everything Marketplace,Order
+2026-07-11,-20.96,Daisy Supermarket,Groceries
+2026-07-11,-20.66,Green Yard Grocery,Groceries
+2026-07-12,-24.90,NetPlus,Home internet
+2026-07-12,-10.21,Checkers Taxi,Taxi ride
+2026-07-13,-11.37,Green Yard Grocery,Groceries
+2026-07-13,-15.07,Garden Street Market,Groceries
+2026-07-13,-2.50,Golden Ear Bakery,Bread and pastries
+2026-07-13,-8.65,Luna Bistro,Lunch
+2026-07-14,-18.46,Daisy Supermarket,Groceries
+2026-07-14,-13.74,Wellness+ Pharmacy,Medicine
+2026-07-15,-12.00,Wave Mobile,Mobile plan
+2026-07-15,-18.57,Daisy Supermarket,Groceries
+2026-07-15,-12.33,Daisy Supermarket,Groceries
+2026-07-16,-12.67,Green Yard Grocery,Groceries
+2026-07-16,-11.04,Green Yard Grocery,Groceries
+2026-07-16,-8.64,Star Cinema,Movie tickets
+2026-07-17,-10.78,Garden Street Market,Groceries
+2026-07-17,-4.77,Bean Coffee,Lunch
+2026-07-17,-10.14,Plate Cafe,Coffee
+2026-07-17,-12.04,Star Cinema,Movie tickets
+2026-07-18,-45.00,TicketsOnline,Concert
+2026-07-19,-4.71,Plate Cafe,Coffee
+2026-07-21,-4.19,Golden Ear Bakery,Bread and pastries
+2026-07-22,-21.40,Daisy Supermarket,Groceries
+2026-07-24,-13.31,Luna Bistro,Lunch
+2026-07-25,-15.12,Garden Street Market,Groceries
+2026-07-26,-10.32,Plate Cafe,Dinner
+2026-07-26,-12.11,Plate Cafe,Coffee
+2026-07-27,-8.75,Plate Cafe,Dinner
+2026-07-29,-17.55,Wellness+ Pharmacy,Medicine
+2026-07-30,-4.94,Golden Ear Bakery,Bread and pastries
+2026-07-31,-17.16,Everything Marketplace,Order
+2026-08-01,-1100.00,Apartment Rent,Monthly rent
+2026-08-01,-16.96,Daisy Supermarket,Groceries
+2026-08-02,-49.00,Transit Card,Transit pass top-up
+2026-08-02,-15.66,Daisy Supermarket,Groceries
+2026-08-02,-19.87,Daisy Supermarket,Groceries
+2026-08-02,-4.81,Plate Cafe,Coffee
+2026-08-03,-9.99,MovieHome,Streaming subscription
+2026-08-03,-13.68,Everything Marketplace,Order
+2026-08-04,-4.09,Golden Ear Bakery,Bread and pastries
+2026-08-05,2200.00,Example Ltd,Salary
+2026-08-06,-135.00,Savings Account,Savings transfer
+2026-08-06,-21.35,Daisy Supermarket,Groceries
+2026-08-06,-10.73,Green Yard Grocery,Groceries
+2026-08-07,-10.09,Bean Coffee,Dinner
+2026-08-07,-10.03,Star Cinema,Movie tickets
+2026-08-08,-2.99,Cloudy Storage,Cloud subscription
+2026-08-08,-21.96,Green Yard Grocery,Groceries
+2026-08-08,-8.88,Green Yard Grocery,Groceries
+2026-08-08,-35.68,Everything Marketplace,Order
+2026-08-09,-10.33,Daisy Supermarket,Groceries
+2026-08-09,-11.05,Wellness+ Pharmacy,Medicine
+2026-08-10,-67.12,City Utilities,"Electricity, water, heating"
+2026-08-11,-19.47,Garden Street Market,Groceries
+2026-08-11,-7.55,Plate Cafe,Dinner
+2026-08-12,-24.90,NetPlus,Home internet
+2026-08-13,-11.55,Daisy Supermarket,Groceries
+2026-08-13,-8.40,Checkers Taxi,Taxi ride
+2026-08-15,-12.00,Wave Mobile,Mobile plan
+2026-08-15,-4.52,Golden Ear Bakery,Bread and pastries
+2026-08-15,-13.81,Bean Coffee,Coffee
+2026-08-15,-10.91,Checkers Taxi,Taxi ride
+2026-08-17,-4.47,Golden Ear Bakery,Bread and pastries
+2026-08-17,-7.20,Plate Cafe,Dinner
+2026-08-17,-69.70,Style Clothing,Clothes
+2026-08-18,-10.00,Daisy Supermarket,Groceries
+2026-08-19,-4.33,Golden Ear Bakery,Bread and pastries
+2026-08-19,-15.07,Everything Marketplace,Order
+2026-08-21,-5.16,Wellness+ Pharmacy,Medicine
+2026-08-22,-21.14,Daisy Supermarket,Groceries
+2026-08-22,-11.14,Luna Bistro,Coffee
+2026-08-22,-260.00,Style Clothing,Summer clothes sale
+2026-08-23,-19.01,Garden Street Market,Groceries
+2026-08-23,-5.63,Bean Coffee,Lunch
+2026-08-24,-9.52,Green Yard Grocery,Groceries
+2026-08-25,-16.09,Daisy Supermarket,Groceries
+2026-08-26,-3.42,Golden Ear Bakery,Bread and pastries
+2026-08-28,-9.60,Star Cinema,Movie tickets
+2026-08-29,-17.34,Daisy Supermarket,Groceries
+2026-08-29,-13.35,Plate Cafe,Coffee
+2026-08-30,-9.90,Green Yard Grocery,Groceries
+2026-08-30,-9.57,Plate Cafe,Dinner
+2026-08-31,-13.54,Green Yard Grocery,Groceries
+2026-08-31,-4.64,Golden Ear Bakery,Bread and pastries
+2026-09-01,-1100.00,Apartment Rent,Monthly rent
+2026-09-01,-16.47,Green Yard Grocery,Groceries
+2026-09-02,-49.00,Transit Card,Transit pass top-up
+2026-09-02,-18.65,Green Yard Grocery,Groceries
+2026-09-03,-9.99,MovieHome,Streaming subscription
+2026-09-03,-11.44,Daisy Supermarket,Groceries
+2026-09-03,-4.85,Bean Coffee,Dinner
+2026-09-04,-9.71,Garden Street Market,Groceries
+2026-09-04,-10.88,Luna Bistro,Dinner
+2026-09-04,-10.88,Star Cinema,Movie tickets
+2026-09-05,2200.00,Example Ltd,Salary
+2026-09-05,-15.91,Green Yard Grocery,Groceries
+2026-09-06,-135.00,Savings Account,Savings transfer
+2026-09-06,-4.63,Golden Ear Bakery,Bread and pastries
+2026-09-07,-4.55,Golden Ear Bakery,Bread and pastries
+2026-09-08,-2.99,Cloudy Storage,Cloud subscription
+2026-09-09,-19.72,Garden Street Market,Groceries
+2026-09-10,-63.73,City Utilities,"Electricity, water, heating"
+2026-09-10,-8.09,Plate Cafe,Dinner
+2026-09-10,-7.63,Wellness+ Pharmacy,Medicine
+2026-09-11,-8.62,Star Cinema,Movie tickets
+2026-09-12,-24.90,NetPlus,Home internet
+2026-09-12,-15.71,Garden Street Market,Groceries
+2026-09-12,-20.27,Garden Street Market,Groceries
+2026-09-12,-20.65,Everything Marketplace,Order
+2026-09-13,-10.52,Plate Cafe,Dinner
+2026-09-14,-7.85,Checkers Taxi,Taxi ride
+2026-09-15,-12.00,Wave Mobile,Mobile plan
+2026-09-15,-11.90,Garden Street Market,Groceries
+2026-09-16,-16.98,Daisy Supermarket,Groceries
+2026-09-16,-11.43,Daisy Supermarket,Groceries
+2026-09-16,-23.48,Everything Marketplace,Order
+2026-09-18,-19.20,Garden Street Market,Groceries
+2026-09-19,-8.30,Bean Coffee,Coffee
+2026-09-20,-17.09,Daisy Supermarket,Groceries
+2026-09-21,-7.00,Luna Bistro,Coffee
+2026-09-22,-3.25,Golden Ear Bakery,Bread and pastries
+2026-09-22,-9.82,Bean Coffee,Dinner
+2026-09-23,-14.10,Green Yard Grocery,Groceries
+2026-09-23,-18.71,Daisy Supermarket,Groceries
+2026-09-23,-10.28,Daisy Supermarket,Groceries
+2026-09-23,-4.89,Golden Ear Bakery,Bread and pastries
+2026-09-23,-2.00,Golden Ear Bakery,Bread and pastries
+2026-09-23,-23.25,Everything Marketplace,Order
+2026-09-24,-12.54,Plate Cafe,Lunch
+2026-09-25,-7.11,Checkers Taxi,Taxi ride
+2026-09-26,-15.47,Garden Street Market,Groceries
+2026-09-26,-6.96,Plate Cafe,Coffee
+2026-09-26,-8.86,Wellness+ Pharmacy,Medicine
+2026-09-27,18.00,Everything Marketplace,Order refund
+2026-09-28,-13.37,Green Yard Grocery,Groceries
+2026-09-28,-2.14,Golden Ear Bakery,Bread and pastries
+2026-10-01,-1100.00,Apartment Rent,Monthly rent
+2026-10-01,-4.24,Golden Ear Bakery,Bread and pastries
+2026-10-02,-49.00,Transit Card,Transit pass top-up
+2026-10-02,-11.87,Garden Street Market,Groceries
+2026-10-02,-13.73,Plate Cafe,Lunch
+2026-10-02,-13.38,Plate Cafe,Lunch
+2026-10-02,-12.18,Everything Marketplace,Order
+2026-10-02,-68.07,Style Clothing,Clothes
+2026-10-03,-9.99,MovieHome,Streaming subscription
+2026-10-03,-11.62,Daisy Supermarket,Groceries
+2026-10-03,-12.79,Daisy Supermarket,Groceries
+2026-10-03,-2.31,Golden Ear Bakery,Bread and pastries
+2026-10-03,-11.50,Plate Cafe,Coffee
+2026-10-03,-23.94,Everything Marketplace,Order
+2026-10-04,-8.41,Luna Bistro,Lunch
+2026-10-04,-11.60,Star Cinema,Movie tickets
+2026-10-05,2200.00,Example Ltd,Salary
+2026-10-05,-3.74,Golden Ear Bakery,Bread and pastries
+2026-10-06,-135.00,Savings Account,Savings transfer
+2026-10-06,-11.80,Plate Cafe,Lunch
+2026-10-06,-10.85,Plate Cafe,Coffee
+2026-10-07,-15.35,Garden Street Market,Groceries
+2026-10-07,-7.99,Luna Bistro,Coffee
+2026-10-08,-2.99,Cloudy Storage,Cloud subscription
+2026-10-09,-12.38,Luna Bistro,Lunch
+2026-10-09,-11.72,Plate Cafe,Coffee
+2026-10-10,-79.31,City Utilities,"Electricity, water, heating"
+2026-10-11,-15.77,Daisy Supermarket,Groceries
+2026-10-11,-11.57,Bean Coffee,Coffee
+2026-10-11,-6.36,Plate Cafe,Coffee
+2026-10-12,-24.90,NetPlus,Home internet
+2026-10-13,-21.24,Green Yard Grocery,Groceries
+2026-10-13,-8.54,Green Yard Grocery,Groceries
+2026-10-14,-20.07,Daisy Supermarket,Groceries
+2026-10-14,-10.83,Daisy Supermarket,Groceries
+2026-10-15,-12.00,Wave Mobile,Mobile plan
+2026-10-17,-2.62,Golden Ear Bakery,Bread and pastries
+2026-10-17,-5.84,Luna Bistro,Lunch
+2026-10-18,-15.56,Garden Street Market,Groceries
+2026-10-19,-14.00,Daisy Supermarket,Groceries
+2026-10-20,-4.61,Golden Ear Bakery,Bread and pastries
+2026-10-21,-7.24,Plate Cafe,Dinner
+2026-10-21,-10.28,Bean Coffee,Dinner
+2026-10-21,-17.98,Wellness+ Pharmacy,Medicine
+2026-10-24,-3.50,Golden Ear Bakery,Bread and pastries
+2026-10-24,-9.49,Star Cinema,Movie tickets
+2026-10-25,-8.23,Checkers Taxi,Taxi ride
+2026-10-26,-11.87,Checkers Taxi,Taxi ride
+2026-10-27,-17.40,Green Yard Grocery,Groceries
+2026-10-27,-8.59,Garden Street Market,Groceries
+2026-10-27,-17.72,Wellness+ Pharmacy,Medicine
+2026-10-28,-10.09,Daisy Supermarket,Groceries
+2026-10-28,-15.69,Green Yard Grocery,Groceries
+2026-10-28,-17.59,Green Yard Grocery,Groceries
+2026-10-30,-13.93,Everything Marketplace,Order
+2026-10-31,-8.62,Green Yard Grocery,Groceries
+2026-10-31,-12.60,Daisy Supermarket,Groceries
